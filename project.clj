@@ -1,4 +1,4 @@
-(defproject kotyo/async "0.1.0-SNAPSHOT"
+(defproject kotyo/async "0.1.0"
   :description "Some extensions to the clojure.core.async library"
   :url "http://github.com/kotyo/async"
   :license {:name "Eclipse Public License"
