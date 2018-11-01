@@ -4,10 +4,11 @@
 (defmacro go-guard [m & body]
   `(async/go
     (try
-      (do ~@body)
+      (do ~m ~@body)
       (catch Throwable t#
-        (doseq [c# ~m]
-          (async/>! c# t#))
+        (when ~(vector? m)
+          (doseq [c# ~m]
+            (async/>! c# t#)))
         t#))))
 
 (defmacro <? [ch]
